@@ -1,7 +1,9 @@
-FROM python:3.9
-COPY . /app
-RUN make /app
+FROM python:2.7
+COPY ./techtrend /app
+WORKDIR /app
+RUN pip install -r requirements.txt
+RUN python ./init_db.py
 EXPOSE 3111
 
 # command to run on container start
-CMD [ "python", "init_db.py" ]
+CMD [ "python", "app.py" ]
