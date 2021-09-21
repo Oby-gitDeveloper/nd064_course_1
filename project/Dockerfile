@@ -1,4 +1,4 @@
-FROM Python 2.7
+FROM Python:2.7
 COPY . /app
 RUN pip install -r requirements.txt
 EXPOSE 3111
